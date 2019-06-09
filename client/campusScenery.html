@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport"
+        content="width=device-width, initial-scale=1">
+        <!-- Set render engine for 360 browser -->
+<meta name="renderer" content="webkit">
+<!-- No Baidu Siteapp-->
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<!-- Add to homescreen for Chrome on Android -->	
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+<!-- Tile icon for Win8 (144x144 + tile color) -->
+<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#0e90d2">
+<link rel="stylesheet" type="text/css" href="css/style1.css" />
+<script src="js/modernizr-custom.js"></script>
+
+	<!--[if IE]>
+		<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+			<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+				load(); 
+			// create SVG circle overlay and append it to the preview element
+			function createCircleOverlay(previewEl) {
+				var dummy = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+				dummy.setAttributeNS(null, 'version', '1.1');
+				dummy.setAttributeNS(null, 'width', '100%');
+				dummy.setAttributeNS(null, 'height', '100%');
+				dummy.setAttributeNS(null, 'class', 'overlay');
+				var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+				var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+				circle.setAttributeNS(null, 'cx', 0);
+				circle.setAttributeNS(null, 'cy', 0);
+				circle.setAttributeNS(null, 'r', Math.sqrt(Math.pow(previewEl.offsetWidth,2) + Math.pow(previewEl.offsetHeight,2)));
+				dummy.appendChild(g);
+				g.appendChild(circle);
+				previewEl.appendChild(dummy);
+			}
+			
+			new GridFx(document.querySelector('.grid'), {
+				onInit : function(instance) {
+					createCircleOverlay(instance.previewEl);
+				},
+				onResize : function(instance) {
+					instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+				},
+				onOpenItem : function(instance, item) {
+					// item's image
+					var gridImg = item.querySelector('img'),
+						gridImgOffset = gridImg.getBoundingClientRect(),
+						win = {width: document.documentElement.clientWidth, height: window.innerHeight},
+						SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+						SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
+						
+					SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+					// set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+					if( gridImgOffset.left + gridImg.offsetWidth/2 < win.width/2 ) {
+						SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+					}
+					else {
+						SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+					}
+				}
+			});
+						
+					});
+		function load(){
+					mui.ajax('http://10.0.2.2:8080/pictures/all',{
+									data:{
+								},
+								dataType :'json',
+								type :'post',
+								timeout : 5000,
+								success :function(data){
+									var i;
+									var j=1;
+										if(data.length>0){
+											for(i=0;i<8;i++){
+												app.baseImgFile("img"+j,data[i].url,100,function(i){
+													
+												});
+												document.getElementById("img"+j+"a").href="file:///storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/HBuilder/www/_img/img"+j+".jpg";
+												document.getElementById("img"+j).src=data[i].url;
+												document.getElementById("img"+j+"content").innerHTML=data[i].name;
+												j++;
+											}
+										}
+										else{
+											mui.toast("error!");
+										}
+								}
+				              })
+		}
+		</script>
+		
+
+	</head>
+
+	<body class="demo-1"  background="img/campusScenery/viewbackground.png" style="width: 100%;height: 100%;" > 
+		<div class="mui-content" style="position: absolute;left: 0px;top: 0px;width: 100%;height: 100%;">
+			<img src="img/campusScenery/viewbackground.png" width="100%" height="100%"/>
+		</div>
+		<header class="mui-bar mui-bar-nav" >
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">校园风光</h1>
+		</header>
+		<br /><br />
+		<div class="content">
+		<div class="grid">
+			<div class="grid__item" data-size="220x220"> <a  class="img-wrap"  id="img1a"><img  alt="img1" id="img1"/>
+				<div class="description description--grid" id="img1content" style="text-align: center;"></div>
+				</a> </div>
+			<div class="grid__item" data-size="220x220"> <a  class="img-wrap" id="img2a"><img  alt="img2" id="img2"/>
+				<div class="description description--grid" id="img2content" style="text-align: center;"></div>
+				</a> </div>
+			<div class="grid__item" data-size="220x220"> <a class="img-wrap" id="img3a"><img  alt="img3" id="img3" />
+				<div class="description description--grid" id="img3content" style="text-align: center;"></div>
+			</a> </div>
+			<div class="grid__item" data-size="220x220"> <a class="img-wrap" id="img4a"><img  alt="img4" id="img4" />
+				<div class="description description--grid" id="img4content" style="text-align: center;"></div>
+			</a> </div>
+			<div class="grid__item" data-size="220x220"> <a class="img-wrap" id="img5a"><img  alt="img5" id="img5" />
+				<div class="description description--grid" id="img5content" style="text-align: center;"></div>
+			</a> </div>
+			<div class="grid__item" data-size="220x220"> <a class="img-wrap" id="img6a"><img  alt="img6" id="img6" />
+				<div class="description description--grid" id="img6content" style="text-align: center;"></div>
+			</a> </div>
+			<div class="grid__item" data-size="220x220"> <a class="img-wrap" id="img7a"><img  alt="img7" id="img7" />
+				<div class="description description--grid" id="img7content" style="text-align: center;"></div>
+			</a> </div>
+			<div class="grid__item" data-size="220x220"> <a class="img-wrap" id="img8a"><img  alt="img8" id="img8" />
+				<div class="description description--grid" id="img8content" style="text-align: center;"></div>
+			</a> </div>
+			
+		</div>
+		<!-- /grid -->
+		<div class="preview">
+			<button class="action action--close"><i class="fa fa-times">x</i><span class="text-hidden">Close</span></button>
+			<div class="description description--preview"></div>
+		</div>
+		<!-- /preview -->
+	</div>
+</div>
+<!-- /container -->
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/masonry.pkgd.min.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		
+	</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left "></a>
+		    <h1 class="mui-title">设置</h1>
+		</header>
+		<div class="mui-content">
+			<button class="mui-btn mui-btn-block mui-btn-outlined mui-action-back" style="width: 80%;margin-left:35px;margin-top: 35px;" id="tuichu">退出登录</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+			    beforeback: function() {
+			　　　　 //获得父页面的webview
+			        var list = plus.webview.currentWebview().opener();
+			　　　　 //触发父页面的自定义事件(refresh),从而进行刷新
+			        mui.fire(list, 'refresh');
+			        //返回true,继续页面关闭逻辑
+			        return true;
+				    }
+				});
+			mui.plusReady(function(){
+				document.getElementById('tuichu').addEventListener('tap',function(){
+					localStorage.clear();
+				mui.toast("您已成功退出登录!");	
+				});
+			});
+		</script>
+	</body>
+
+</html>

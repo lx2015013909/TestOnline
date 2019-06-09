@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/mui.min.js"></script>
+		<script src="js/jq/jquery-1.7.1.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			function save(e){
+			localStorage.setItem("newsid",$(e).attr("id"));
+			}
+				function load(){
+					mui.ajax('http://10.0.2.2:8080/plans/all',{
+								data:{},
+								dataType :'json',
+								type :'post',
+								timeout : 5000,
+								success :function(data){
+									var i;
+									var j=1;
+										if(data.length>0){
+											for(i=0;i<data.length;i++){
+												document.getElementById("plans").innerHTML+="<li  class=\"mui-table-view-cell\"><a href=\"plan/1.html\"  id=' " +(data[i].id)+"' onclick=\"save(this)\"><img src='"+(data[i].image)+"' class=\"mui-media-object mui-pull-left\" /><div class=\"mui-media-body\" >"+(data[i].headtitle)+"<p class=\"mui-ellipsis\">"+(data[i].title)+"</p></div></a></li>";
+											}
+										}
+										else{
+											mui.toast("error!");
+										}
+								}
+				              })
+		}
+		</script>
+	</head>
+
+	<body onload="load()">
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">职业规划</h1>
+		</header>
+		<div class="mui-content">
+		<ul class="mui-table-view" id="plans">
+			<li class="mui-table-view-cell mui-media">
+				<img src="img/news/fristview1.jpg" class="mui-media-object mui-pull-left"/>
+				<div class="mui-media-body" style="color: red;">
+					大学生专业指导平台
+					<p class="mui-ellipsis" style="color: red;">欢迎来到职业规划！
+				</div>
+			</li>
+		</ul>
+			</div>
+		
+	</body>
+
+</html>

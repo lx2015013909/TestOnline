@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/sys.css"/>
+		<link rel="stylesheet"  type="text/css " href="css/iconfont.css" />
+		<script src="js/mui.min.js"></script>
+		<script src="js/h.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+			<nav class="mui-bar mui-bar-tab">
+		    <a class="mui-tab-item mui-active" id="sy" >
+		        <span class="mui-icon mui-icon-home"></span>
+		        <span class="mui-tab-label">首页</span>
+		    </a>
+		    <a class="mui-tab-item" id="neighbor">
+		        <span class="mui-icon mui-icon-location"></span>
+		        <span class="mui-tab-label " >附近</span>
+		    </a>
+		    <a class="mui-tab-item" id="mine">
+		        <span class="mui-icon mui-icon-person"></span>
+		        <span class="mui-tab-label">我的</span>
+		    </a>
+		</nav>
+		 <script type="text/javascript" charset="utf-8">  
+            mui.init({  
+                    subpages:[//先加载首页  
+                        {  
+                          url:'sy.html',  
+                          id:'sy.html',  
+                          styles:{  
+                             top: '0px',  
+                             bottom: '60px', 
+                             width: "100%"
+                          }  
+                        },
+                    	{
+                    		url:'neighbor.html',
+                    		id:'neighbor.html',
+                    		styles:{
+                    			left:'100%',
+                    			top:'0px',
+                    			bottom:'60px',
+                    			width:"100%"
+                    		}
+                    	},
+                    	{
+                    		url:'mine.html',
+                    		id:'mine.html',
+                    		styles:{
+                    			left:'200%',
+                    			top:'0px',
+                    			bottom:'60px',
+                    			width:"100%"
+                    				}
+                    	}                 
+                    ]
+                  });
+            mui.plusReady(function(){
+            h('#sy').tap(function(){changeSubs(1);});
+            h('#neighbor').tap(function(){changeSubs(2);});
+            h('#mine').tap(function(){changeSubs(3);});
+            }); 
+      function changeSubs(index){
+            var sy=plus.webview.getWebviewById('sy.html');
+            var neighbor=plus.webview.getWebviewById('neighbor.html');
+            var mine=plus.webview.getWebviewById('mine.html');
+            sy.setStyle({left:(index-1)*100+"%"});
+            neighbor.setStyle({left:(2-index)*100+"%"});
+            mine.setStyle({left:(3-index)*100+"%"});
+           }
+        </script>  
+	</body>
+
+</html>

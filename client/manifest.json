@@ -1,0 +1,224 @@
+{"id":"H52ACD521","name":"i\u4e13\u4e1a","version":{"name":"1.0.0","code":"83"},"description":"","icons":{"72":"icon.png"},"launch_path":"index.html","developer":{"name":"740097081@qq.com","email":"740097081@qq.com","url":"http:\/\/www.dcloud.io"},"permissions":{"Accelerometer":{"description":"\u8bbf\u95ee\u52a0\u901f\u5ea6\u611f\u5e94\u5668"},"Audio":{"description":"\u8bbf\u95ee\u9ea6\u514b\u98ce"},"Cache":{"description":"\u7ba1\u7406\u5e94\u7528\u7f13\u5b58"},"Camera":{"description":"\u8bbf\u95ee\u6444\u50cf\u5934"},"Console":{"description":"\u8ddf\u8e2a\u8c03\u8bd5\u8f93\u51fa\u65e5\u5fd7"},"Contacts":{"description":"\u8bbf\u95ee\u7cfb\u7edf\u8054\u7cfb\u4eba\u4fe1\u606f"},"Device":{"description":"\u8bbf\u95ee\u8bbe\u5907\u4fe1\u606f"},"Downloader":{"description":"\u6587\u4ef6\u4e0b\u8f7d\u7ba1\u7406"},"Events":{"description":"\u5e94\u7528\u6269\u5c55\u4e8b\u4ef6"},"File":{"description":"\u8bbf\u95ee\u672c\u5730\u6587\u4ef6\u7cfb\u7edf"},"Gallery":{"description":"\u8bbf\u95ee\u7cfb\u7edf\u76f8\u518c"},"Geolocation":{"description":"\u8bbf\u95ee\u4f4d\u7f6e\u4fe1\u606f"},"Invocation":{"description":"\u4f7f\u7528Native.js\u80fd\u529b"},"Orientation":{"description":"\u8bbf\u95ee\u65b9\u5411\u611f\u5e94\u5668"},"Proximity":{"description":"\u8bbf\u95ee\u8ddd\u79bb\u611f\u5e94\u5668"},"Storage":{"description":"\u7ba1\u7406\u5e94\u7528\u672c\u5730\u6570\u636e"},"Uploader":{"description":"\u7ba1\u7406\u6587\u4ef6\u4e0a\u4f20\u4efb\u52a1"},"Runtime":{"description":"\u8bbf\u95ee\u8fd0\u884c\u671f\u73af\u5883"},"XMLHttpRequest":{"description":"\u8de8\u57df\u7f51\u7edc\u8bbf\u95ee"},"Zip":{"description":"\u6587\u4ef6\u538b\u7f29\u4e0e\u89e3\u538b\u7f29"},"Barcode":{"description":"\u7ba1\u7406\u4e8c\u7ef4\u7801\u626b\u63cf\u63d2\u4ef6"},"Maps":{"description":"\u7ba1\u7406\u5730\u56fe\u63d2\u4ef6"},"Speech":{"description":"\u7ba1\u7406\u8bed\u97f3\u8bc6\u522b\u63d2\u4ef6"},"Webview":{"description":"\u7a97\u53e3\u7ba1\u7406"},"NativeUI":{"description":"\u539f\u751fUI\u63a7\u4ef6"},"Navigator":{"description":"\u6d4f\u89c8\u5668\u4fe1\u606f"},"NativeObj":{"description":"\u539f\u751f\u5bf9\u8c61"},"Stream":{"description":"plus.stream.*"},"Confusion":{"description":"Resource confusion"},"Share":{"description":"plus.share.*"}},"plus":{"splashscreen":{"autoclose":true,"waiting":true,"delay":"2000"},"runmode":"liberate","signature":"Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==","ads":{"rp":false,"splash":true,"push":false,"spot":false},"adid":"","statusbar":[]},"fullscreen":true,
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"sy.html"
+				],
+				"refer": [
+					"neighbor.html",
+					"mine.html"
+				],
+				"priority": 0
+			},
+			"sy.html": {
+				"resources": [],
+				"refer": [
+					"courseQuery.html",
+					"campusScenery.html",
+					"notice.html",
+					"news.html",
+					"plan.html",
+					"text1.html",
+					"text2.html",
+					"message.html",
+					"music.html",
+					"eating.html"
+				],
+				"priority": 0
+			},
+			"plan.html": {
+				"resources": [],
+				"refer": [
+					"plan/1.html",
+					"plan/3.html"
+				],
+				"priority": 0
+			},
+			"plan/1.html": {
+				"resources": [],
+				"refer": [
+					"plan.html"
+				],
+				"priority": 0
+			},
+			"mine.html": {
+				"resources": [],
+				"refer": [
+					"minedetail.html",
+					"guanyu.html",
+					"shezhi.html"
+				],
+				"priority": 0
+			},
+			"message.html": {
+				"resources": [],
+				"refer": [
+					"message1.html",
+					"news/news.html",
+					"message/message.html"
+				],
+				"priority": 0
+			},
+			"news.html": {
+				"resources": [],
+				"refer": [
+					"news/news1.html",
+					"news/news.html",
+					"news/news2.html"
+				],
+				"priority": 0
+			},
+			"news/news1.html": {
+				"resources": [],
+				"refer": [
+					"news.html"
+				],
+				"priority": 0
+			},
+			"news/news.html": {
+				"resources": [],
+				"refer": [
+					"news.html",
+					"message.html"
+				],
+				"priority": 0
+			},
+			"news/news2.html": {
+				"resources": [],
+				"refer": [
+					"news.html"
+				],
+				"priority": 0
+			},
+			"message/message.html": {
+				"resources": [],
+				"refer": [
+					"message.html"
+				],
+				"priority": 0
+			},
+			"neighbor.html": {
+				"resources": [],
+				"refer": [
+					"write.html"
+				],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"img/text2_2.jpg",
+				"img/notice/notice6.jpg",
+				"img/eating/eating1.jpg",
+				"img/eating/eatfirst3.png",
+				"js/jq/imagesloaded.pkgd.min.js",
+				"message3.html",
+				"img/text3_1.jpg",
+				"js/h.js",
+				"plan/img/3.jpg",
+				"img/news/news1.jpg",
+				"img/bianxie2.png",
+				"css/iconfont.css",
+				"img/campusScenery/7.png",
+				"plan/img/4.jpg",
+				"fonts/iconfont.ttf",
+				"js/mui.js",
+				"img/campusScenery/6.png",
+				"fonts/mui.ttf",
+				"plan/img/5.jpg",
+				"img/campusScenery/IMG_3574.JPG",
+				"plan/img/1.jpg",
+				"img/campusScenery/IMG_3579.JPG",
+				"js/classie.js",
+				"img/campusScenery/IMG_3576.JPG",
+				"js/jq/classie.js",
+				"img/music/FJJ.jpg",
+				"img/sy/text1.jpg",
+				"img/neighbor/1.png",
+				"img/campusScenery/IMG_3641.JPG",
+				"img/sy/lastview3.jpg",
+				"js/mui.min.js",
+				"js/jq/masonry.pkgd.min.js",
+				"img/eating/eating3.jpg",
+				"js/modernizr-custom.js",
+				"plan/2.html",
+				"img/sy/lastview.jpg",
+				"img/notice/notice5.jpg",
+				"img/sy/text2.jpg",
+				"plan/img/6.jpg",
+				"img/text3_3.jpg",
+				"img/eating/eatfirst1.png",
+				"img/campusScenery/5.png",
+				"img/text1_2.jpg",
+				"img/campusScenery/8.png",
+				"css/mui.min.css",
+				"img/logo.png",
+				"text4.html",
+				"img/sy/lastview6.jpg",
+				"img/notice/notice1.jpg",
+				"img/eating/eating_new.jpg",
+				"img/text4_2.jpg",
+				"img/campusScenery/IMG_3570.JPG",
+				"img/campusScenery/IMG_3640.JPG",
+				"img/sy/fristview3.jpg",
+				"img/news/fristview1.jpg",
+				"img/notice/notice4.jpg",
+				"img/campusScenery/IMG_3575.JPG",
+				"img/eating/eating5.jpg",
+				"img/sy/text3.jpg",
+				"img/neighbor/3.png",
+				"img/mine/1.png",
+				"img/eating/eating2.jpg",
+				"img/sy/lastview4.jpg",
+				"img/notice/notice2.jpg",
+				"js/jq/modernizr.custom.js",
+				"img/sy/lastview2.jpg",
+				"img/text4_3.jpg",
+				"js/jquery.nstSlider.js",
+				"img/sy/fristview1.jpg",
+				"js/masonry.pkgd.min.js",
+				"css/style1.css",
+				"js/main.js",
+				"js/jq/cbpgridgallery.js",
+				"img/text1_1.jpg",
+				"img/sy/lastview5.jpg",
+				"img/message/5.jpg",
+				"img/campusScenery/2.png",
+				"css/sys.css",
+				"img/neighbor/2.png",
+				"css/mui.css",
+				"img/message/IMG_3680.JPG",
+				"img/sy/text4.jpg",
+				"img/news/news2.jpg",
+				"img/campusScenery/9.png",
+				"img/eating/eatfirst2.png",
+				"img/sy/fristview2.jpg",
+				"img/text3_2.jpg",
+				"img/text2_1.jpg",
+				"plan/img/7.jpg",
+				"message2.html",
+				"img/text1bc1.jpg",
+				"js/imagesloaded.pkgd.min.js",
+				"img/campusScenery/viewbackground.png",
+				"text3.html",
+				"img/text4_1.jpg",
+				"img/campusScenery/IMG_3578.JPG",
+				"img/sy/lastview7.jpg",
+				"img/campusScenery/4.png",
+				"img/sy/fristview4.jpg",
+				"img/campusScenery/3.png",
+				"img/music/JJ.jpg",
+				"img/notice/notice.jpg",
+				"img/eating/eating4.jpg",
+				"img/campusScenery/IMG_3577.JPG",
+				"plan/img/2.jpg",
+				"img/campusScenery/1.png",
+				"img/notice/notice3.jpg",
+				"img/message/IMG_3679.JPG",
+				"message4.html",
+				"img/text1bc.jpg",
+				"img/text2_3.jpg"
+			]
+		}
+	}}

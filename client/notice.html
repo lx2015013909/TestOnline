@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">考试通知</h1>
+		</header><br /><br />
+		<div  style="font-size:26px;margin-top: 5px;background: url(img/notice/notice.jpg)g);width: 100%;height: 50px;text-align: center;font-family: '微软雅黑';;" >
+			<br />英语四级笔试考试还有<span id="siji"></span>天
+		</div>
+		<br />
+		<div  style="font-size:26px;margin-top: 5px;background: url(img/notice/notice1.jpg);width: 100%;height: 50px;text-align: center;font-family: '微软雅黑';;" >
+			<br />英语六级笔试考试还有<span id="liuji"></span>天
+		</div>
+		<br />
+		<div  style="font-size:26px;margin-top: 5px;background: url(img/notice/notice2.jpg);width: 100%;height: 50px;text-align: center;font-family: '微软雅黑';;" >
+			<br />国家二级计算机考试还有<span id="erji"></span>天
+		</div>
+		<br />
+		<div  style="font-size:26px;margin-top: 5px;background: url(img/notice/notice3.jpg);width: 100%;height: 50px;text-align: center;font-family: '微软雅黑';;" >
+			<br />国家研究生招生考试还有<span id="kaoyan"></span>天
+		</div>
+		<br />
+		<div  style="font-size:26px;margin-top: 5px;background: url(img/notice/notice4.jpg);width: 100%;height: 50px;text-align: center;font-family: '微软雅黑';;" >
+			<br />教师资格证考试还有<span id="teacher"></span>天
+		</div>
+		<br />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var d1 = new Date();
+			var d2 = new Date('2019/06/16');
+			var d3 =parseInt((parseInt(d2 - d1) / 1000 / 60/60/24));
+			if(d3<0)
+			{
+				d3=365+d3;
+			}
+			d3=d3+1;
+			var d4 = new Date('2020/03/24');
+			var d5 =parseInt((parseInt(d4 - d1) / 1000 / 60/60/24))+1;
+			if(d5<0)
+			{
+				d5=365+d5;
+			}
+			d5=d5+1;
+			var d6 = new Date('2019/12/24');
+			var d7=parseInt((parseInt(d6 - d1) / 1000 / 60/60/24))+1;
+			if(d7<0)
+			{
+				d7=365+d7;
+			}
+			d7=d7+1;
+			var d8=new Date('2019/03/15');
+			var d9=parseInt((parseInt(d8 - d1) / 1000 / 60/60/24))+1;
+			if(d9<0)
+			{
+				d9=365+d9;
+			}
+			d9=d9+1;
+			document.getElementById('siji').innerHTML=d3;
+			document.getElementById('liuji').innerHTML=d3;
+			document.getElementById('erji').innerHTML=d5;
+			document.getElementById('kaoyan').innerHTML=d7;
+			document.getElementById('teacher').innerHTML=d9;
+		</script>
+	</body>
+</html>

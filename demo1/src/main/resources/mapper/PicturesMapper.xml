@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.PicturesMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.Pictures">
+        <id column="id" jdbcType="INTEGER" property="id"></id>
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="url" jdbcType="VARCHAR" property="url" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select *  from pictures order by id desc
+    </select>
+    <select id="selectById" resultMap="BaseResultMap">
+        select *  from pictures where id=#{id}
+    </select>
+    <insert id="insert" >
+        insert into pictures(name,url) values  (#{name},#{url})
+    </insert>
+    <delete id="deleteById">
+        delete from pictures where id=#{id}
+    </delete>
+    <update id="updateById">
+        update pictures set name=#{name},url =#{url} where id=#{id}
+    </update>
+</mapper>

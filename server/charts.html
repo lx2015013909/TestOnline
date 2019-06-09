@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Dashboard</title>
+        <!-- Mobile specific metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- Force IE9 to render in normal mode -->
+        <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+        <meta name="author" content="SuggeElson" />
+        <meta name="description" content=""
+        />
+        <meta name="keywords" content=""
+        />
+        <meta name="application-name" content="sprFlat admin template" />
+        <!-- Import google fonts - Heading first/ text second -->
+        <link rel='stylesheet' type='text/css' 
+        <!--[if lt IE 9]>
+
+<![endif]-->
+        <!-- Css files -->
+        <!-- Icons -->
+        <link href="assets/css/icons.css" rel="stylesheet" />
+		
+        <!-- jQueryUI -->
+        <link href="assets/css/sprflat-theme/jquery.ui.all.css" rel="stylesheet" />
+        <!-- Bootstrap stylesheets (included template modifications) -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <!-- Plugins stylesheets (all plugin custom css) -->
+        <link href="assets/css/plugins.css" rel="stylesheet" />
+        <!-- Main stylesheets (template main css file) -->
+        <link href="assets/css/main.css" rel="stylesheet" />
+        <!-- Custom stylesheets ( Put your own changes here ) -->
+        <link href="assets/css/custom.css" rel="stylesheet" />
+        <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/img/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="icon" href="assets/img/ico/favicon.ico" type="image/png">
+        <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
+        <meta name="msapplication-TileColor" content="#3399cc" />
+		        <script src="assets/plugins/core/pace/pace.min.js"></script>
+		        <!-- Important javascript libs(put in all pages) -->
+		        <script src="assets/js/jquery-1.8.3.min.js"></script>
+		        <script>
+		        window.jQuery || document.write('<script src="assets/js/libs/jquery-2.1.1.min.js">\x3C/script>')
+		        </script>
+		        <script src="assets/js/jquery-ui.js"></script>
+		        <script>
+		        window.jQuery || document.write('<script src="assets/js/libs/jquery-ui-1.10.4.min.js">\x3C/script>')
+		        </script>
+		        <!--[if lt IE 9]>
+		  <script type="text/javascript" src="assets/js/libs/excanvas.min.js"></script>
+		  <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		  <script type="text/javascript" src="assets/js/libs/respond.min.js"></script>
+		<![endif]-->
+		        <!-- Bootstrap plugins -->
+		        <script src="assets/js/bootstrap/bootstrap.js"></script>
+		        <!-- Core plugins ( not remove ever) -->
+		        <!-- Handle responsive view functions -->
+		        <script src="assets/js/jRespond.min.js"></script>
+		        <!-- Custom scroll for sidebars,tables and etc. -->
+		        <script src="assets/plugins/core/slimscroll/jquery.slimscroll.min.js"></script>
+		        <script src="assets/plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js"></script>
+		        <!-- Resize text area in most pages -->
+		        <script src="assets/plugins/forms/autosize/jquery.autosize.js"></script>
+		        <!-- Proivde quick search for many widgets -->
+		        <script src="assets/plugins/core/quicksearch/jquery.quicksearch.js"></script>
+		        <!-- Bootbox confirm dialog for reset postion on panels -->
+		        <script src="assets/plugins/ui/bootbox/bootbox.js"></script>
+		        <!-- Other plugins ( load only nessesary plugins for every page) -->
+		        <script src="assets/plugins/charts/flot/jquery.flot.js"></script>
+		        <script src="assets/plugins/charts/flot/jquery.flot.pie.js"></script>
+		        <script src="assets/plugins/charts/flot/jquery.flot.resize.js"></script>
+		        <script src="assets/plugins/charts/flot/jquery.flot.time.js"></script>
+		        <script src="assets/plugins/charts/flot/jquery.flot.growraf.js"></script>
+		        <script src="assets/plugins/charts/flot/jquery.flot.categories.js"></script>
+		        <script src="assets/plugins/charts/flot/jquery.flot.stack.js"></script>
+		        <script src="assets/plugins/charts/flot/jquery.flot.tooltip.min.js"></script>
+		        <script src="assets/plugins/charts/flot/date.js"></script>
+		        <script src="assets/plugins/charts/sparklines/jquery.sparkline.js"></script>
+		        <script src="assets/plugins/charts/pie-chart/jquery.easy-pie-chart.js"></script>
+		        <script src="assets/plugins/forms/icheck/jquery.icheck.js"></script>
+		        <script src="assets/plugins/forms/tags/jquery.tagsinput.min.js"></script>
+		        <script src="assets/plugins/forms/tinymce/tinymce.min.js"></script>
+		        <script src="assets/plugins/misc/highlight/highlight.pack.js"></script>
+		        <script src="assets/plugins/misc/countTo/jquery.countTo.js"></script>
+		        <script src="assets/plugins/ui/weather/skyicons.js"></script>
+		        <script src="assets/plugins/ui/notify/jquery.gritter.js"></script>
+		        <script src="assets/plugins/ui/calendar/fullcalendar.js"></script>
+		        <script src="assets/js/jquery.sprFlat.js"></script>
+		        <script src="assets/js/app.js"></script>
+		        <script src="assets/js/pages/dashboard.js"></script>
+		<script type="text/javascript" src="scripts/fancybox/jquery.fancybox-1.3.4.js"></script>
+		<script type="text/javascript" src="scripts/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+		<link rel="stylesheet" type="text/css" href="style/authority/jquery.fancybox-1.3.4.css" media="screen"></link>
+		<script type="text/javascript" src="scripts/result.js"></script>
+		<script type="text/javascript">
+			function getlist(){
+				document.getElementById("headImage").src=localStorage.getItem("headImage");
+				document.getElementById("nickname").innerHTML=localStorage.getItem("nickname");
+				$.ajax({
+					type:'POST',
+					url:'http://localhost:8080/pictures/all',
+					data:{},
+					success:function(data){//返回json结果 
+					var i;
+					var j=1;
+					 for(i=0;i<data.length;i++,j++){
+						var table=document.getElementById("tab");
+						var newRow=table.insertRow();
+							var newCell1 = newRow.insertCell(0);  newCell1.innerHTML = "<td>"+j+"</td>" ; 	  
+							var newCell2 = newRow.insertCell(1);  newCell2.innerHTML = "<td>"+data[i].name+"</td>" ;
+							var newCell1 = newRow.insertCell(2);  newCell1.innerHTML = "<td>"+data[i].url.substring(0,220)+"</td>" ; 	  
+							var n="<input type=\"button\" class=\"ui_input_btn01 shenhe\" text=' " +(data[i].id)+"'/ id=\"shenhe\"   value=\"编辑\" onclick=\"Shenhe(this)\"  >";
+							var newCell2 = newRow.insertCell(3);  newCell2.innerHTML = n ;
+							 $(".shenhe").fancybox({
+									  	'href'  : 'pictures_edit.html',
+									  	'width' : 500,
+									  	'height' : 500,
+									  	'type' : 'iframe',
+									  	'hideOnOverlayClick' : false,
+									  	'showCloseButton' : false,
+									  	'onClosed' : function() { 
+									  window.location.href = 'charts.html';
+							    }
+							});
+							  } 	
+					}
+					
+				});
+			}
+		
+			function Shenhe(e){
+				localStorage.setItem("id",$(e).attr("text"));
+			}
+			
+		</script>
+    </head>
+    <body onload="getlist()">
+        <!-- Start #header -->
+        <div id="header">
+            <div class="container-fluid">
+                <div class="navbar">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">
+                            <i class="im-windows8 text-logo-element animated bounceIn"></i><span class="text-logo">spr</span><span class="text-slogan">flat</span> 
+                        </a>
+                    </div>
+                    <nav class="top-nav" role="navigation">
+                        <ul class="nav navbar-nav pull-left">
+                            <li id="toggle-sidebar-li">
+                                <a href="#" id="toggle-sidebar"><i class="en-arrow-left2"></i>
+                        </a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav pull-right">
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown">
+                                   <img class="user-avatar" id="headImage" ><span id="nickname"></span></a>
+                                <ul class="dropdown-menu right" role="menu">
+                                    <li><a href="login.html"><i class="im-exit"></i> Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- Start .header-inner -->
+        </div>
+        <!-- End #header -->
+        <!-- Start #sidebar -->
+        <div id="sidebar">
+            <!-- Start .sidebar-inner -->
+            <div class="sidebar-inner">
+                <!-- Start #sideNav -->
+                <ul id="sideNav" class="nav nav-pills nav-stacked">
+                    <li><a href="index.html">用户管理 <i class="im-screen"></i></a>
+                    </li>
+                    <li><a href="charts.html">校园风光 <i class="st-chart"></i></a>
+                    </li>
+                    <li>
+                        <a href="forms.html"> 校园新闻 <i class="im-paragraph-justify"></i></a>
+                    </li>
+                    <li><a href="tables.html"> 餐饮推荐 <i class="im-table2"></i></a>
+                    </li>
+                    <li><a href="plan.html">职业规划 <i class="st-lab"></i></a>
+                    </li>
+                    <li><a href="music.html"><i class="ec-mail"></i> 每日必听</a>
+                    </li>
+                    <li><a href="file.html"><i class="en-upload"></i> 学长寄语</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- End .sidebar-inner -->
+        </div>
+        <!-- End #sidebar -->
+        <!-- Start #right-sidebar -->
+        <div id="right-sidebar" class="hide-sidebar">
+            <!-- Start .sidebar-inner -->
+            <div class="sidebar-inner">
+                <div class="sidebar-panel mt0">
+                    <div class="sidebar-panel-content fullwidth pt0">
+                        <div class="chat-user-list">
+                            <form class="form-horizontal chat-search" role="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search for user...">
+                                    <button type="submit"><i class="ec-search s16"></i>
+                                    </button>
+                                </div>
+                                <!-- End .form-group  -->
+                            </form>
+                            <ul class="chat-ui bsAccordion">
+                                <li>
+                                    <a href="#">Favorites <span class="notification teal">4</span><i class="en-arrow-down5"></i></a>
+                                    <ul class="in">
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/49.jpg" alt="@chadengle">Chad Engle
+                                                <span class="has-message"><i class="im-pencil"></i></span>
+                                            </a>
+                                            <span class="status online"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/54.jpg" alt="@alagoon">Anthony Lagoon</a>
+                                            <span class="status offline"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/52.jpg" alt="@koridhandy">Kory Handy</a>
+                                            <span class="status"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/50.jpg" alt="@divya">Divia Manyan</a>
+                                            <span class="status"><i class="en-dot"></i></span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Online <span class="notification green">3</span><i class="en-arrow-down5"></i></a>
+                                    <ul class="in">
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/51.jpg" alt="@kolage">Eric Hofman</a>
+                                            <span class="status online"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/55.jpg" alt="@mikebeecham">Mike Beecham</a>
+                                            <span class="status online"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/53.jpg" alt="@derekebradley">Darek Bradly</a>
+                                            <span class="status online"><i class="en-dot"></i></span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Offline <span class="notification red">5</span><i class="en-arrow-down5"></i></a>
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/56.jpg" alt="@laurengray">Lauren Grey</a>
+                                            <span class="status offline"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/49.jpg" alt="@chadengle">Chad Engle</a>
+                                            <span class="status offline"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/58.jpg" alt="@frankiefreesbie">Frankie Freesibie</a>
+                                            <span class="status offline"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/57.jpg" alt="@joannefournier">Joane Fornier</a>
+                                            <span class="status offline"><i class="en-dot"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="chat-name">
+                                                <img class="chat-avatar" src="assets/img/avatars/59.jpg" alt="@aiiaiiaii">Alia Alien</a>
+                                            <span class="status offline"><i class="en-dot"></i></span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chat-box">
+                            <h5>Chad Engle</h5>
+                            <a id="close-user-chat" href="#" class="btn btn-xs btn-primary"><i class="en-arrow-left4"></i></a>
+                            <ul class="chat-ui chat-messages">
+                                <li class="chat-user">
+                                    <p class="avatar">
+                                        <img src="assets/img/avatars/49.jpg" alt="@chadengle">
+                                    </p>
+                                    <p class="chat-name">Chad Engle <span class="chat-time">15 seconds ago</span>
+                                    </p>
+                                    <span class="status online"><i class="en-dot"></i></span>
+                                    <p class="chat-txt">Hello Sugge check out the last order.</p>
+                                </li>
+                                <li class="chat-me">
+                                    <p class="avatar">
+                                        <img src="assets/img/avatars/48.jpg" alt="SuggeElson">
+                                    </p>
+                                    <p class="chat-name">SuggeElson <span class="chat-time">10 seconds ago</span>
+                                    </p>
+                                    <span class="status online"><i class="en-dot"></i></span>
+                                    <p class="chat-txt">Ok i will check it out.</p>
+                                </li>
+                                <li class="chat-user">
+                                    <p class="avatar">
+                                        <img src="assets/img/avatars/49.jpg" alt="@chadengle">
+                                    </p>
+                                    <p class="chat-name">Chad Engle <span class="chat-time">now</span>
+                                    </p>
+                                    <span class="status online"><i class="en-dot"></i></span>
+                                    <p class="chat-txt">Thank you, have a nice day</p>
+                                </li>
+                            </ul>
+                            <div class="chat-write">
+                                <form action="#" class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <textarea name="sendmsg" id="sendMsg" class="form-control elastic" rows="1"></textarea>
+                                        <a role="button" class="btn" id="attach_photo_btn">
+                                            <i class="fa-picture s20"></i> 
+                                        </a>
+                                        <input type="file" name="attach_photo" id="attach_photo">
+                                    </div>
+                                    <!-- End .form-group  -->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End .sidebar-inner -->
+        </div>
+        <!-- End #right-sidebar -->
+        <!-- Start #content -->
+        <div id="content">
+		<table class="table" cellspacing="0" cellpadding="0" width="100%" align="center" border="0" id="tab">
+						<tr>
+							<th>序号</th>
+							<th>名称</th>
+							<th>base64</th>
+							<th>状态</th>
+						</tr>	
+					</table>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!-- End #content -->
+        <!-- Javascripts -->
+        <!-- Load pace first -->
+    </body>
+</html>

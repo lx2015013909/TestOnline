@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="scripts/jquery/jquery-1.7.1.js"></script>
+<link href="style/authority/basic_layout.css" rel="stylesheet" type="text/css">
+<link href="style/authority/common_style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="scripts/authority/commonAll.js"></script>
+<script type="text/javascript" src="scripts/jquery/jquery-1.4.4.min.js"></script>
+<script src="scripts/My97DatePicker/WdatePicker.js" type="text/javascript" defer="defer"></script>
+<script type="text/javascript" src="scripts/artDialog/artDialog.js?skin=default"></script>
+<script type="text/javascript" src="assets/js/wangEditor.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		/*
+		 * 提交
+		 */
+		
+		$("#submitbutton").click(function() {
+			if(validateForm()){
+				updateinfo();
+			}
+			});
+		
+		/*
+		 * 取消
+		 */
+		$("#cancelbutton").click(function() {
+			/**  关闭弹出iframe  **/
+			window.parent.$.fancybox.close();
+		});
+		
+		var result = 'null';
+		if(result =='success'){
+			/**  关闭弹出iframe  **/
+			window.parent.$.fancybox.close();
+		}
+	});
+		
+
+	/** 表单验证  **/
+	function validateForm(){
+		if($("#title").val()==""){
+			art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'请填写名称', ok:true,});
+			return false;
+		}
+		return true;
+	}
+	</script>
+	<script type="text/javascript">
+			function updateinfo(){
+			$.ajax({
+				type:'POST',
+				url:'http://localhost:8080/news/update',
+				data:{"id":localStorage.getItem("id"),
+					 "title":document.getElementById("title").value,
+					  "textcontent":$("#editor").attr("text"),},
+				success:function(data){//返回json结果 
+					if(data){
+						alert("修改成功!");
+						window.parent.$.fancybox.close();
+					}
+					else{
+						alert("系统出现错误，请联系管理员！");
+					}
+					}	
+				});	
+		}
+	</script>
+	<script type="text/javascript">
+		function getValue(){
+		$.ajax({
+			type:'POST',
+			url:'http://localhost:8080/news/select',
+			data:{id:localStorage.getItem("id")},
+			success:function(data){//返回json结果 
+				var i;
+				document.getElementById("title").value=data.title;
+				editor.txt.html(data.textcontent);
+			}	
+		});
+	}
+	</script>
+
+</head>
+<body onload="getValue()">
+<form id="submitForm" name="submitForm" action="#" method="post">
+	<div id="container">
+		<div id="nav_links">
+			<strong>编辑新闻</strong>
+			<div id="page_close">
+				<a href="javascript:parent.$.fancybox.close();">
+					<img src="images/common/page_close.png" width="20" height="20" style="vertical-align: text-top;"/>
+				</a>
+			</div>
+		</div>
+		<div class="ui_content">
+			<table  cellspacing="0" cellpadding="0" width="100%" align="left" border="0">
+				<tr>
+					<td class="ui_text_rt">标题</td>
+					<td class="ui_text_lt">
+						<input type="text" id="title"  name="title" class="ui_input_txt02" />
+					</td>
+				</tr>
+				<tr>
+					<div id="editor" >
+					</div>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td class="ui_text_lt">
+						&nbsp;<input id="submitbutton" type="button" value="提交" class="ui_input_btn01"/></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</form>
+
+</body>
+<script type="text/javascript">
+	var E = window.wangEditor
+		var editor = new E('#editor')
+		editor.customConfig.uploadImgShowBase64 = true
+		editor.create()
+		document.getElementById('submitbutton').addEventListener('click', function () {
+		// 读取 html
+			document.getElementById("editor").text=editor.txt.html()
+	}, false)
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			function load(){
+					mui.ajax('http://10.0.2.2:8080/message/select',{
+								data:{id:""+localStorage.getItem("newsid")},
+								dataType :'json',
+								type :'post',
+								timeout : 5000,
+								success :function(data){
+									var i;
+									var j=1;
+										if(data){
+										document.getElementById("contanier").innerHTML="<div id=\"title\">"+(data.title)+"</div><div id=\"textcontent\">"+(data.textcontent)+"";
+										}
+										else{
+											mui.toast("error!");
+										}
+								}
+				              })
+		}
+		</script>
+		<style type="text/css">
+			#title{
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body onload="load()">
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">学长寄语</h1>
+		</header>
+		<div class="mui-content"  id="contanier">
+			
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />	
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			var httpid=null;
+			var httpimage=null;
+			var httpsex=null;
+			var httptel=null;
+			var httpnickname=null;
+			function load(){
+				if(localStorage.getItem('httpid')>0){
+					document.getElementById('lijidenglu').style.display='none'; 
+					document.getElementById('denglusuccess').style.display='block';
+					document.getElementById('shezhi').style.display='block';
+					document.getElementById('headImage').src=localStorage.getItem('httpimage');
+					document.getElementById('nickname').innerHTML=localStorage.getItem('httpnickname');
+				}
+				else{
+					document.getElementById('denglusuccess').style.display='none';
+					document.getElementById('shezhi').style.display='none';
+					document.getElementById('lijidenglu').style.display='block';
+				}
+			}
+		</script>
+	</head>
+
+	<body onload="load()">
+		<header class="mui-bar mui-bar-nav">
+		    <h1 class="mui-title">个人中心</h1><span style="float: right;display: none;" class="mui-icon mui-icon-gear" id="shezhi"></span>
+		</header><br />
+		<div class="mui-content denglu"  align="center" id="lijidenglu" style="background: url(img/background.jpg) no-repeat 0 center;">
+		<img src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCADcANwDASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAIDBAUBBv/EAC4QAQEAAQIGAQIFAwUAAAAAAAABAgMRBBIhMUFRcWGBFCJCkaETMrEjM1Jiwf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD7oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEsMMs8tsZvQRTw0tTP+3G7e70jVpcPjh1v5svd8LwY8eEy/VlJ8TdP8JP8Anf2aQGW8JPGd+8V58NqY9ZtlPp3bgHLsuN2ssvqjpZ4Y5zbKbxk1uHuG9w3uPrzAUAAAAAAAAAAAAAAAAAAlhhdTKYydb3vpv0tPHTx2xnzfaHD6X9PT6z8161cAAAAAAAADJxOhtvnhOnmT/LM6jBxGn/T1Ok/LesBUAAAAAAAAAAAAAAt4fDn1Zv2nWqmvg8dscsvdBpnYAAAAAAAAABTxGHPpXbvOsXAOWPc8eXPKerY8AAAAAAAAAAAAAbuF6aE+tYW7hbvoT6WwFwAAAAAAAAAAAOfxH+/l8q1mvd9fL52VgAAAAAAAAAAAANXBZdMsfV3ZU9DPk1Zb2vSg6IAAAAAAAAADy2Sb3tHqjis+XSsnfLoDHlebK33bXgAAAAAAAAAAAA18PpafLM5ea/Xx9gU6Wjnn122nutWloYafWTe+73WoamUwwuV8ATUxudwl/NJvsm5vPlz8++2W++7bo601J6yneAtAAAAAAB5bJLb2AtmMtt2k7ozl1cJdpcbPLJr639S8uO/LP5S4XU2twva9Z8glq8L3unftWXLG43bKWX1XURzwxzm2U3gOaJ62OOGdmGW88/T6IAAAAAAAAAJ6Wplp5bzrPM9oAOjhnM8OadmbitTmy5Jek7/KnT1MtO243v3ntHe273vQCWyyy2WdrABq0+K8an7xpmUym+Nl+HMJbjd5bL7lB1BgnE6s/VL8xL8Xqesf5BtGH8VqeJjEMtXUy/uytnqdIDZqa+GHe731GTV1stXv0niRWAEtlll2s6wAdHSzmphMvPmelPEa+2+GF6+bPDNhqZ4Y5TG7S/wiAAAAAAAAAAAAAAAAAPZLe0t+IlNHVs6YX79AQF34bV9SfNPwup7x/cFIuvC6n/X93l4fVn6N/iwFQldPPHvjZ9kQAAAAAAAAAAAAAAAJLbJJbb4gD3HHLK7Yy2/Rp0uF7XUv2jTMZjNpJJ6Bkw4S2b55SfSL8eH08e2Mt93qtAeSSdps9AAAAABHLDDKbZYy/MSAZ8+FwvXG3G/uoz4fUw3u28+jeA5Y36mjhqdbNr7jJq6Oend71nuArAAAAAAAAB7hjc8pjJvaD3Twy1MuXGdfN8Ru0tLHSnTrb3r3S05p4yT732mAAAAAAAAAAAAAAA8s3m1m70Bj1+H5d8sO3mevhndRj4nR5d88J08z19QZwAAAAAGzhdPlw5rOuX8Rl0sefUxx8W9fh0p2AAAAAAAAAAAAAAAAAAAeWSza9q9Ac7WwunqWeO8+EGzisN9PmnfH/DGAAAADRweP+plfU2bGXgv1/b/1qAAAAAAAAAAAAAAAAAAAABHOc2GU9yxzXUcvzQAAf//Z" style="border-radius: 50%;margin-bottom:20px;" width="80px" height="80px" id="formal" />	
+		<div><button type="button" class="mui-btn" id="denglu" >立即登录</button></div>
+		</div>
+		
+		<div class="mui-content" align="center" style="line-height: 40px;display:none;" id="lijizhuce" > 
+			<span style="font-size: 30px;">欢迎注册</span><br />
+			<span style="font-size: 25px;">每一天,乐在沟通</span>
+			<input type="text" name="username" id="registerusername"  placeholder="请在此输入你的用户名" /><br />
+			<input type="password" name="password" id="registerpassword"  placeholder="请在此输入你的密码,长度8-18位" /><br />
+			<input type="password" name="password1" id="registerpassword1"  placeholder="再次输入密码"  style="float: left;width: 100%;height:35px;"/><br />
+			<div><button type="button" class="mui-btn" id="zhuce1" style="margin-left: 100px;" >注册</button><button type="button" class="mui-btn" id="denglu2" style="margin-left: 40px;">点击此处，返回登录</button></div>
+		</div>
+		
+		
+		<div class="mui-content"  align="center" style="display: none;" id="denglujiemian">
+			<input type="text" name="username" id="username"  placeholder="请在此输入你的用户名" />
+			<input type="password" name="password" id="password"  placeholder="请在此输入你的密码,长度8-18位" />
+			<div><button type="button" class="mui-btn" id="denglu1" style="margin-left: 100px;" >登录</button><button type="button" class="mui-btn" id="zhuce" style="margin-left: 40px;">点击此处,注册账号</button></div>
+		</div>
+		
+		
+		<div id="denglusuccess" style="display: none;" class="mui-content">       
+		<div class="mui-content"  style="width:100%;height: 150px;border-bottom:5px solid #DDDDDD;">
+			<img  style="border-radius: 50%;margin-bottom:-40px;" width="90px" height="90px" id="headImage"/><span style="font-family: '微软雅黑';" id="nickname">&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+		</div>
+		<div class="mui-content" style="padding: 0;margin-top:12px;">
+			<span class="mui-icon mui-icon-contact" ></span><span style="font-family: '微软雅黑';" id="minedetail">&nbsp;&nbsp;个人资料</span><span style="float: right;" class="mui-icon mui-icon-forward"></span><br><hr><br>
+			<span class="mui-icon mui-icon-pengyouquan" ></span><span style="font-family: '微软雅黑';margin-top: 10px;" id="guanzhu">&nbsp;&nbsp;关注的人</span><span style="float: right;" class="mui-icon mui-icon-forward"></span><br><hr><br>
+			<span class="mui-icon mui-icon-info"></span><span style="font-family: '微软雅黑';margin-top: 10px;" id="guanyu">&nbsp;&nbsp;关于我们</span><span style="float: right;" class="mui-icon mui-icon-forward"></span><hr><br>
+		</div>
+	</body>
+<script type="text/javascript">
+				window.addEventListener('refresh', function(e){//执行刷新
+				    location.reload();
+			      	});
+			mui.plusReady(function(){
+				document.getElementById('minedetail').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'minedetail.html',
+					id:'minedetail.html' ,  
+				}) 
+				});
+				document.getElementById('shezhi').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'shezhi.html',
+					id:'shezhi.html' 
+				})
+				});
+				document.getElementById('denglu').addEventListener('tap',function(){
+				document.getElementById('lijidenglu').style.display='none';
+				document.getElementById('denglujiemian').style.display='block';
+				});
+				document.getElementById('zhuce').addEventListener('tap',function(){
+				document.getElementById('denglujiemian').style.display='none';
+				document.getElementById('lijizhuce').style.display='block'; 
+				});
+				document.getElementById('zhuce1').addEventListener('tap',function(){
+					var username=document.getElementById('registerusername').value;
+					var password=document.getElementById('registerpassword').value;
+					var password1=document.getElementById('registerpassword1').value;
+					if(username.length<5){
+						mui.toast("用户名长度过短，至少为5位！");
+					}
+					else
+					{
+						if(password.length<5)
+						{
+							mui.toast("密码长度过短，至少为5位！");
+						}
+						else
+						{
+								if(password==password1){
+								mui.ajax('http://10.0.2.2:8080/users/add',{
+									data:{
+									username :""+document.getElementById('registerusername').value,
+									password :""+document.getElementById('registerpassword').value,
+									headImage:""+document.getElementById('formal').src
+								},
+								dataType :'json',
+								type :'post',
+								timeout : 5000,
+								success :function(data){
+										if(data>0){
+											document.getElementById('lijizhuce').style.display='none';
+											document.getElementById('denglujiemian').style.display='block';
+											mui.toast('注册成功');
+										}
+										else{
+											mui.toast('用户名已存在，请重新输入!');
+										}
+								}
+				                });
+							}
+							else{
+								mui.toast('两次密码输入的不同，请检查后重新输入!');
+							}
+						}
+						
+					}
+						
+					
+					
+				
+			});
+				document.getElementById('denglu1').addEventListener('tap',function(){
+					var username=document.getElementById('username').value;
+					var password=document.getElementById('password').value;
+								mui.ajax('http://10.0.2.2:8080/users/login',{
+									data:{ 
+									username :""+document.getElementById('username').value,
+									password :""+document.getElementById('password').value 
+								},
+								dataType :'json',
+								type :'post',
+								timeout : 5000,  
+								success :function(data){
+										if(data.id==null){
+											mui.toast('用户名或密码错误,请确认后重新输入!');
+										}
+										else{
+											document.getElementById('headImage').src=data.headImage;
+											document.getElementById('nickname').innerHTML=data.nickname;
+											document.getElementById('denglujiemian').style.display='none';
+											document.getElementById('denglusuccess').style.display='block';
+											document.getElementById('shezhi').style.display='block';
+											localStorage.setItem("httpid",data.id);
+											localStorage.setItem("username",document.getElementById('username').value);
+											localStorage.setItem("httpimage",data.headImage);
+											localStorage.setItem("httpnickname",data.nickname);
+											localStorage.setItem("httpsex",data.sex);
+											localStorage.setItem("httptel",data.tel);
+										}
+								}
+				             });
+				
+			});
+			document.getElementById('denglu2').addEventListener('tap',function(){
+				document.getElementById('lijizhuce').style.display='none';
+				document.getElementById('denglujiemian').style.display='block';
+			});
+				document.getElementById('guanzhu').addEventListener('tap',function(){
+				mui.toast('功能正在开发中！')
+				});
+				document.getElementById('guanyu').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'guanyu.html',
+					id:'guanyu.html' ,  
+				})
+				});
+			});
+		</script>
+</html>

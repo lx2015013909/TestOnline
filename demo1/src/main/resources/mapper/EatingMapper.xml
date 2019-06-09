@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.EatingMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.Eating">
+        <id column="id" jdbcType="INTEGER" property="id"></id>
+        <result column="title" jdbcType="VARCHAR" property="title" />
+        <result column="leastprice" jdbcType="INTEGER" property="leastprice" />
+        <result column="travelprice" jdbcType="INTEGER" property="travelprice" />
+        <result column="price1" jdbcType="INTEGER" property="price1" />
+        <result column="price1down" jdbcType="INTEGER" property="price1down" />
+        <result column="price2" jdbcType="INTEGER" property="price2" />
+        <result column="price2down" jdbcType="INTEGER" property="price2down" />
+        <result column="price3" jdbcType="INTEGER" property="price3" />
+        <result column="image" jdbcType="VARCHAR" property="image" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select *  from eating order by id desc
+    </select>
+    <select id="selectById" resultMap="BaseResultMap">
+        select *  from eating where id=#{id}
+    </select>
+    <insert id="insert" >
+        insert into eating(title,leastprice,travelprice,price1,price1down,price2,price2down,price3,image) values  (#{title},#{leastprice},#{travelprice},#{price1},#{price1down},#{price2},#{price2down},#{price3},#{image})
+    </insert>
+    <delete id="deleteById">
+        delete from eating where id=#{id}
+    </delete>
+    <update id="updateById">
+        update eating set title=#{title},leastprice =#{leastprice},travelprice =#{travelprice},price1 =#{price1},price1down =#{price1down},price2 =#{price2},price2down =#{price2down},price3 =#{price3},image =#{image}where id=#{id}
+    </update>
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.PlanMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.Plans">
+        <id column="id" jdbcType="INTEGER" property="id"></id>
+        <result column="headtitle" jdbcType="VARCHAR" property="headtitle" />
+        <result column="title" jdbcType="VARCHAR" property="title" />
+        <result column="textcontent" jdbcType="VARCHAR" property="textcontent" />
+        <result column="image" jdbcType="VARCHAR" property="image" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select *  from plan order by id desc
+    </select>
+    <select id="selectById" resultMap="BaseResultMap">
+        select *  from plan where id=#{id}
+    </select>
+    <insert id="insert" >
+        insert into plan(headtitle,title,textcontent,image) values  (#{headtitle},#{title},#{textcontent},#{image})
+    </insert>
+    <delete id="deleteById">
+        delete from plan where id=#{id}
+    </delete>
+    <update id="updateById">
+        update plan set headtitle=#{headtitle},title=#{title},textcontent =#{textcontent},image=#{image} where id=#{id}
+    </update>
+</mapper>

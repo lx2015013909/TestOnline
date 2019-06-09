@@ -1,0 +1,424 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+		*{ margin: 0; padding: 0; }
+		.sdw { display: none; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #000000; opacity: 0.2; }
+		.alert { display: none; position: absolute; top: calc(50vh - 100px); left: calc(50vw - 120px); width: 240px; height: 150px; border-radius: 5px; box-shadow: 0 0 5px #3A3838; background-color: #fff; }
+		.alert > div:first-child { height: 100px; line-height: 110px; width: 100%; text-align: center; }
+		.alert > div:nth-child(2) { height: 50px; width: 100%; }
+		.alert > div:nth-child(2) button { width: 30%; height: 30px; margin-left: 30px; }
+	</style>
+
+	</head>
+
+	<body >
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">课程查询</h1>
+		</header>
+	
+		
+	   <div  class="mui-content" id="xijie" style="display: none; font-size: 12px;font-family: '微软雅黑';">
+		</div>
+
+		<div class="mui-content" id="select">	
+	   <select id="first" onChange="change()">  
+   <option selected="selected">请在此选择你的学校</option>  
+   <option>皖西学院</option>  
+</select>  
+  
+<select id="second" onChange="change1()">  
+   <option selected="selected"></option>  
+</select>  
+<select id="third">
+	<option selected="selected"></option>
+</select>
+  <div align="center" onclick="click1()">
+  	<button style="text-align: center;">确定</button> 
+  </div>
+  		</div>
+  <div id="schedule" class="mui-content" style="display: none;">
+  	<table border="1" cellspacing="0" cellpadding="0" style="width: 100%;height: 100%;font-size: 12px;">
+  		<tr><th>大一</th><th>大二</th><th>大三</th></tr>
+  		<tr><td style="width: 33%;" id="grade1" align="center"><br></td><td style="width: 33%;" id="grade2"  align="center"><br></td><td style="width: 33%;" id="grade3"  align="center"><br></td></tr>
+  	</table>
+  </div>
+  			<div class="mui-content" style="margin-right:20px;display: none;" align="center" onclick="click2()" id="reselect">
+			<button>重新选择专业</button>
+		</div>
+<script>  
+function change()  
+{  
+   var x = document.getElementById("first");  
+   var y = document.getElementById("second");  
+   var z = document.getElementById("third");
+   y.options.length = 0; // 清除second下拉框的所有内容  
+   if(x.selectedIndex == 0)  
+   {  
+        y.options.add(new Option("", "0", false, true));  // 默认选中省会城市  
+        z.options.add(new Option("","0",false,true));
+   }  
+  
+   if(x.selectedIndex == 1)  
+   {  
+   	    y.options.add(new Option("", "0"),false,true);  
+        y.options.add(new Option("电子与信息工程学院", "电子与信息工程学院"));  
+        y.options.add(new Option("金融与数学学院", "金融与数学学院")); 
+        y.options.add(new Option("艺术学院", "艺术学院"));  
+        y.options.add(new Option("电气与光电工程学院", "电气与光电工程学院"));
+        y.options.add(new Option("材料与化工学院", "材料与化工学院"));
+        y.options.add(new Option("法学院", "法学院"));
+        y.options.add(new Option("环境与旅游学院", "环境与旅游学院"));
+        y.options.add(new Option("机械与车辆工程学院", "机械与车辆工程学院"));
+        y.options.add(new Option("建筑与土木工程学院", "建筑与土木工程学院"));
+        y.options.add(new Option("经济与管理学院", "经济与管理学院"));
+        y.options.add(new Option("生物与制药工程学院", "生物与制药工程学院"));
+        y.options.add(new Option("体育学院", "体育学院"));
+        y.options.add(new Option("外国语学院", "外国语学院"));
+        y.options.add(new Option("文化与传媒学院", "文化与传媒学院"));
+        y.options.add(new Option("马克思主义学院", "马克思主义学院"));
+   } 
+  }
+   function change1()
+{
+	var y=document.getElementById("second");
+	var z=document.getElementById("third");
+	z.options.length=0;
+	if(y.selectedIndex==0){
+		z.options.add(new Option("", "0", false, true));
+	}
+	if(y.selectedIndex==1){
+        z.options.add(new Option("计算机科学与技术", "计算机科学与技术"));  
+        z.options.add(new Option("电子与信息工程", "电子与信息工程")); 
+        z.options.add(new Option("通信工程", "通信工程"));
+        z.options.add(new Option("网络工程","网络工程"))
+        z.options.add(new Option("电子信息科学与技术","电子信息科学与技术"))
+	}
+	if(y.selectedIndex==2){
+        z.options.add(new Option("经济与金融", "经济与金融"));  
+        z.options.add(new Option("金融工程", "金融工程")); 
+        z.options.add(new Option("经济统计学", "经济统计学"));
+        z.options.add(new Option("数学与应用数学","数学与应用数学"))
+	}
+	if(y.selectedIndex==3){
+        z.options.add(new Option("环境设计", "环境设计"));  
+        z.options.add(new Option("视觉传达设计", "视觉传达设计")); 
+        z.options.add(new Option("服装与服饰设计", "服装与服饰设计"));
+        z.options.add(new Option("音乐学","音乐学"));
+        z.options.add(new Option("美术学","美术学"));
+        z.options.add(new Option("播音与主持艺术","播音与主持艺术"))
+	}
+	if(y.selectedIndex==4){
+        z.options.add(new Option("电气工程及自动化", "电气工程及自动化"));  
+        z.options.add(new Option("建筑电气与智能化", "建筑电气与智能化")); 
+        z.options.add(new Option("光电信息科学与工程", "光电信息科学与工程"));
+        z.options.add(new Option("光源与照明","光源与照明"))
+	}
+	if(y.selectedIndex==5){
+        z.options.add(new Option("应用化学", "应用化学"));  
+        z.options.add(new Option("化学工程与工艺", "化学工程与工艺")); 
+        z.options.add(new Option("材料科学与工程", "材料科学与工程"));
+        z.options.add(new Option("高分子材料与工程","高分子材料与工程"))
+	}
+	if(y.selectedIndex==6){
+        z.options.add(new Option("法学", "法学"))
+	}
+	if(y.selectedIndex==7){
+        z.options.add(new Option("地理科学", "地理科学"));  
+        z.options.add(new Option("园林", "园林"));
+        z.options.add(new Option("旅游管理","旅游管理"));
+        z.options.add(new Option("酒店管理","酒店管理"))
+	}
+	if(y.selectedIndex==8){
+        z.options.add(new Option("机械设计制造及其自动化", "机械设计制造及其自动化"));  
+        z.options.add(new Option("材料成型及控制工程", "材料成型及控制工程")); 
+        z.options.add(new Option("汽车服务工程", "汽车服务工程"))
+	}
+	if(y.selectedIndex==9){
+        z.options.add(new Option("建筑学", "建筑学"));  
+        z.options.add(new Option("土木工程", "土木工程")); 
+        z.options.add(new Option("给水排水工程", "给水排水工程"))
+	}
+	if(y.selectedIndex==10){
+        z.options.add(new Option("市场营销", "市场营销"));  
+        z.options.add(new Option("财务管理", "财务管理")); 
+        z.options.add(new Option("国际经济与贸易", "国际经济与贸易"));
+        z.options.add(new Option("物流管理","物流管理"));
+        z.options.add(new Option("电子商务","电子商务"))
+	}
+	if(y.selectedIndex==11){
+        z.options.add(new Option("生物工程", "生物工程"));  
+        z.options.add(new Option("制药工程", "制药工程")); 
+        z.options.add(new Option("药物制剂", "药物制剂"));
+        z.options.add(new Option("食品质量与安全","食品质量与安全"));
+        z.options.add(new Option("动物科学","动物科学"));
+        z.options.add(new Option("动物医学","动物医学"))
+	}
+	if(y.selectedIndex==12){
+        z.options.add(new Option("体育教育", "体育教育"));  
+        z.options.add(new Option("休闲体育", "休闲体育"))
+	}
+	if(y.selectedIndex==13){
+        z.options.add(new Option("英语专业", "英语专业"))
+	}
+	if(y.selectedIndex==14){
+        z.options.add(new Option("汉语言文学", "汉语言文学"));
+        z.options.add(new Option("新闻学", "新闻学"));
+        z.options.add(new Option("广告学", "广告学"));
+        z.options.add(new Option("网络与新媒体", "网络与新媒体"))
+	}
+	if(y.selectedIndex==15){
+        z.options.add(new Option("马克思主义学院", "马克思主义学院"))
+	}
+  }
+function click1(){
+	var x=document.getElementById("first");
+	var y=document.getElementById("second");
+	var z=document.getElementById("third");
+	var j=document.getElementById("select");
+	var k=document.getElementById("xijie");
+	if(x.selectedIndex+y.selectedIndex+z.selectedIndex<2){
+		alert("您的选择不正确请重新选择!");
+	}
+	else{
+		j.style.display='none'; 
+		k.style.display='block';
+		k.innerHTML='当前选择  '+x.value+y.value+z.value;
+		switch(z.value)
+		{
+			case "计算机科学与技术":
+			document.getElementById("grade1").innerHTML='高级语言程序设计（C2）';
+			document.getElementById("grade2").innerHTML='算法与数据结构<br>数据库原理及应用<br>计算机组成原理';
+			document.getElementById("grade3").innerHTML='计算机网络<br>操作系统<br>软件工程';break;
+			case "电子与信息工程":
+			document.getElementById("grade1").innerHTML='高级语言程序设计（C2）';
+			document.getElementById("grade2").innerHTML='信号与系统';
+			document.getElementById("grade3").innerHTML='嵌入式系统及应用<br>EDA技术<br>通信原理<br>传感器原理与应用<br>计算机通信网';break;
+			case "通信工程":
+			document.getElementById("grade1").innerHTML='高级语言程序设计（C2）';
+			document.getElementById("grade2").innerHTML='通信原理';
+			document.getElementById("grade3").innerHTML='数字信号处理<br>计算机网络<br>光纤通信原理<br>移动通信';break;
+			case "网络工程":
+			document.getElementById("grade1").innerHTML='高级语言程序设计（C2）';
+			document.getElementById("grade2").innerHTML='计算机网络<br>无线通信技术<br>RFID技术';
+			document.getElementById("grade3").innerHTML='嵌入式系统与应用<br>无线传感器网络<br>物联网技术与应用';break;
+			case "电子信息科学与技术":
+			document.getElementById("grade1").innerHTML='高级语言程序设计（C2）';
+			document.getElementById("grade2").innerHTML='信号与系统';
+			document.getElementById("grade3").innerHTML='嵌入式系统及应用<br>数字信号处理<br>自动控制原理<br>通信原理';break;
+			case "经济与金融":
+			document.getElementById("grade1").innerHTML='微观经济学';
+			document.getElementById("grade2").innerHTML='保险学<br>金融工程学<br>金融经济学';
+			document.getElementById("grade3").innerHTML='公司金融<br>区域经济学<br>证券投资学<br>国际金融';break;
+			case "金融工程":
+			document.getElementById("grade1").innerHTML='微观经济学';
+			document.getElementById("grade2").innerHTML='运筹学<br>金融工程学';
+			document.getElementById("grade3").innerHTML='公司金融<br>证券投资学<br>金融风险管理<br>金融计量学';break;
+			case "经济统计学":
+			document.getElementById("grade1").innerHTML='微观经济学';
+			document.getElementById("grade2").innerHTML='国民经济核算<br>应用随机过程<br>运筹学<br>统计学';
+			document.getElementById("grade3").innerHTML='计量经济学';break;
+			case "数学与应用数学":
+			document.getElementById("grade1").innerHTML='数学分析<br>高等代数与解析几何';
+			document.getElementById("grade2").innerHTML='近世代数';
+			document.getElementById("grade3").innerHTML='函数论概论<br>常微分方程<br>数学模型';break;
+			case "环境设计":
+			document.getElementById("grade1").innerHTML='设计基础';
+			document.getElementById("grade2").innerHTML='建筑工程定额预算';
+			document.getElementById("grade3").innerHTML='家居空间设计<br>办公室空间设计<br>环境景观设计';break;
+			case "视觉传达设计":
+			document.getElementById("grade1").innerHTML='设计基础';
+			document.getElementById("grade2").innerHTML='广告设计';
+			document.getElementById("grade3").innerHTML='包装设计<br>网页设计<br>VI设计';break;
+			case "服装与服饰设计":
+			document.getElementById("grade1").innerHTML='设计基础';
+			document.getElementById("grade2").innerHTML='服装设计学';
+			document.getElementById("grade3").innerHTML='服装配饰设计<br>专题设计<br>服装工艺学<br>品牌服装设计';break;
+			case "音乐学":
+			document.getElementById("grade1").innerHTML='声乐<br>钢琴<br>中国音乐史与名作欣赏';
+			document.getElementById("grade2").innerHTML='基础和声学<br>中国民族音乐<br>合唱与指挥';
+			document.getElementById("grade3").innerHTML='合唱与指挥';break;
+			case "美术学":
+			document.getElementById("grade1").innerHTML='素描<br>色彩';
+			document.getElementById("grade2").innerHTML='中国美术史<br>书法<br>篆刻<br>透视与解剖<br>漆画<br>艺术概论<br>外国美术史';
+			document.getElementById("grade3").innerHTML='油画<br>花鸟<br>抽象表现<br>漆艺';break;
+			case "播音与主持":
+			document.getElementById("grade1").innerHTML='播音学概论<br>播音主持语音基础<br>播音主持发声技巧<br>播音主持创作基础';
+			document.getElementById("grade2").innerHTML='广播播音与主持<br>语言表达<br>文艺作品演播<br>即兴口语表达';
+			document.getElementById("grade3").innerHTML='电视播音与主持';break;
+			case "电气工程及自动化":
+			document.getElementById("grade1").innerHTML='电路分析';
+			document.getElementById("grade2").innerHTML='电机学';
+			document.getElementById("grade3").innerHTML='电气控制与PLC技术<br>电力电子技术<br>电力拖动自动控制系统<br>电力系统分析';break;
+			case "建筑电气与智能化":
+			document.getElementById("grade1").innerHTML='电路分析';
+			document.getElementById("grade2").innerHTML='建筑智能环境学<br>自动控制原理';
+			document.getElementById("grade3").innerHTML='建筑供配电技术<br>建筑设备自动化系统<br>建筑电气控制技术<br>建筑电气照明<br>建筑物信息设施系统<br>公共安全技术';break;
+			case "光电信息科学与工程":
+			document.getElementById("grade1").innerHTML='电路分析';
+			document.getElementById("grade2").innerHTML='工程光学<br>半导体物理';
+			document.getElementById("grade3").innerHTML='信息光学<br>光通信原理与技术<br>光电检测技术';break;
+			case "光源与照明":
+			document.getElementById("grade1").innerHTML='电路分析';
+			document.getElementById("grade2").innerHTML='工程光学<br>半导体物理';
+			document.getElementById("grade3").innerHTML='光辐射测量原理与技术<br>电气照明技术<br>电光源原理及应用';break;
+			case "应用化学":
+			document.getElementById("grade1").innerHTML='无机化学<br>分析化学';
+			document.getElementById("grade2").innerHTML='物理化学<br>仪器分析';
+			document.getElementById("grade3").innerHTML='工业分析<br>波谱分析<br>化工仪表及自动化<br>化学反应工程<br>化工工艺学';break;
+			case "化学工程与工艺":
+			document.getElementById("grade1").innerHTML='无机化学<br>分析化学';
+			document.getElementById("grade2").innerHTML='物理化学<br>仪器分析';
+			document.getElementById("grade3").innerHTML='化工热力学<br>化学反应工程<br>化工设备机械基础<br>分离工程与技术<br>化工过程分析与综合<br>化工仪表及自动化';break;
+			case "材料科学与工程":
+			document.getElementById("grade1").innerHTML='无机化学<br>有机化学';
+			document.getElementById("grade2").innerHTML='材料科学基础<br>物理化学';
+			document.getElementById("grade3").innerHTML='材料现代制备方法<br>材料现代分析技术<br>材料物理性能<br>材料力学性能<br>材料热力学';break;
+			case "高分子材料与工程":
+			document.getElementById("grade1").innerHTML='无机化学<br>有机化学';
+			document.getElementById("grade2").innerHTML='材料科学基础<br>物理化学';
+			document.getElementById("grade3").innerHTML='高分子化学<br>高分子材料成型加工原理<br>高分子物理<br>材料现代分析技术<br>聚合物合成工艺学';break;
+			case "法学":
+			document.getElementById("grade1").innerHTML='民法总论<br>刑法总论<br>行政法与行政诉讼法';
+			document.getElementById("grade2").innerHTML='经济学概论<br>会计学基础<br>民法分论（1）<br>刑法分论<br>刑事诉讼法<br>民事诉讼法<br>司法口才学';
+			document.getElementById("grade3").innerHTML='国际法<br>国际私法<br>国际经济法<br>中国法制史<br>劳动与社会保障法<br>环境与资源保护法';break;
+			case "地理科学":
+			document.getElementById("grade1").innerHTML='地质学基础<br>气象学与气候学';
+			document.getElementById("grade2").innerHTML='测量与地图学<br>管理学<br>地理信息系统';
+			document.getElementById("grade3").innerHTML='中国地理<br>世界地理<br>人文地理学<br>GIS技术应用<br>经济地理学<br>旅游地理学<br>区域分析与规划<br>城市地理学';break;
+			case "园林":
+			document.getElementById("grade1").innerHTML='园林制图<br>AUTCAD基础';
+			document.getElementById("grade2").innerHTML='园林规划设计1';
+			document.getElementById("grade3").innerHTML='园林植物栽培与养护<br>计算机辅助规划设计(Ps+Su)<br>园林花卉学<br>园林规划设计2<br>森林公园规划与设计<br>园林建筑设计原理<br>生态农业园规划与设计<br>园林工程';break;
+			case "旅游管理":
+			document.getElementById("grade1").innerHTML='旅游心理学<br>旅游经济学<br>旅游地理学';
+			document.getElementById("grade2").innerHTML='旅游政策与法规<br>导游业务<br>旅游电子商务';
+			document.getElementById("grade3").innerHTML='旅游管理信息系统<br>旅游规划与开发';break;
+			case "酒店管理":
+			document.getElementById("grade1").innerHTML='饭店管理';
+			document.getElementById("grade2").innerHTML='旅游政策与法规<br>旅游实用礼仪<br>导游业务<br>餐饮管理<br>前厅与客房管理 ';
+			document.getElementById("grade3").innerHTML='旅行社经营管理<br>会展经营与管理<br>旅游景区管理';break;
+			case "机械设计制造及其自动化":
+			document.getElementById("grade1").innerHTML='现代工程图学(1)';
+			document.getElementById("grade2").innerHTML='机械原理 ';
+			document.getElementById("grade3").innerHTML='机械制造技术基础<br>机械设计<br>机械制造装备设计<br>数控技术';break;
+			case "材料成型及控制工程":
+			document.getElementById("grade1").innerHTML='现代工程图学(1)';
+			document.getElementById("grade2").innerHTML='材料科学基础 ';
+			document.getElementById("grade3").innerHTML='材料热力学<br>材料成型测试技术<br>材料成型原理(上)<br>材料成型原理(下)<br>材料成型控制工程基础';break;
+			case "汽车服务工程":
+			document.getElementById("grade1").innerHTML='现代工程图学(1)';
+			document.getElementById("grade2").innerHTML='汽车构造';
+			document.getElementById("grade3").innerHTML='汽车电器与电子技术<br>汽车检测与故障诊断<br>汽车保险与理赔';break;
+			case "建筑学":
+			document.getElementById("grade1").innerHTML='建筑初步<br>建筑素描';
+			document.getElementById("grade2").innerHTML='建筑设计基础<br>建筑模型制作';
+			document.getElementById("grade3").innerHTML='公共建筑设计原理<br>建筑设计<br>居住建筑设计原理';break;
+			case "土木工程":
+			document.getElementById("grade1").innerHTML='土木工程制图<br>理论力学';
+			document.getElementById("grade2").innerHTML='钢结构基本原理';
+			document.getElementById("grade3").innerHTML='钢筋混凝土结构基本原理<br>基础工程<br>结构试验与工程检测加固技术<br>土木工程施工技术';break;
+			case "给水排水工程":
+			document.getElementById("grade1").innerHTML='给排水科学与工程专业导论';
+			document.getElementById("grade2").innerHTML='土建工程基础<br>流体力学<br>电工学';
+			document.getElementById("grade3").innerHTML='给水管道工程<br>排水管道工程<br>水工程经济<br>水资源利用与取水工程<br>水质工程学<br>建筑给水排水工程';break;
+			case "市场营销":
+			document.getElementById("grade1").innerHTML='微观经济学<br>基础会计<br>统计学<br>市场营销学';
+			document.getElementById("grade2").innerHTML='宏观经济学<br>财务管理<br>推销学<br>消费者行为学<br>广告学<br>商品学';
+			document.getElementById("grade3").innerHTML='物流管理<br>国际市场营销';break;
+			case "财务管理":
+			document.getElementById("grade1").innerHTML='初级会计实务';
+			document.getElementById("grade2").innerHTML='中级财务会计<br>会计电算化';
+			document.getElementById("grade3").innerHTML='成本会计<br>审计学<br>税法<br>管理会计';break;
+			case "国际经济与贸易":
+			document.getElementById("grade1").innerHTML='基础会计<br>市场营销学';
+			document.getElementById("grade2").innerHTML='国际贸易理论<br>国际贸易实务';
+			document.getElementById("grade3").innerHTML='外贸函电<br>外贸单证业务<br>国际结算<br>经贸英语';break;
+			case "物流管理":
+			document.getElementById("grade1").innerHTML='微观经济学<br>宏观经济学<br>基础会计';
+			document.getElementById("grade2").innerHTML='物流信息系统<br>物流技术经济学<br>运输与配送管理';
+			document.getElementById("grade3").innerHTML='国际物流学<br>物流系统规划与设计';break;
+			case "电子商务":
+			document.getElementById("grade1").innerHTML='基础会计<br>市场营销学';
+			document.getElementById("grade2").innerHTML='微观经济学<br>宏观经济学<br>统计学<br>财务管理';
+			document.getElementById("grade3").innerHTML='计算机网络<br>电子支付与清算<br>电商网站建设与网页设计';break;
+			case "生物工程":
+			document.getElementById("grade1").innerHTML='普通生物学<br>无机及分析化学';
+			document.getElementById("grade2").innerHTML='物理化学<br>有机化学<br>普通生物学';
+			document.getElementById("grade3").innerHTML='植物天然产物开发<br>生物质能源工程<br>微生物发酵工程<br>蛋白质工程<br>植物细胞工程';break;
+			case "制药工程":
+			document.getElementById("grade1").innerHTML='无机化学';
+			document.getElementById("grade2").innerHTML='物理化学<br>生物化学';
+			document.getElementById("grade3").innerHTML='药剂学<br>制药工艺学<br>天然药物化学<br>药物分析<br>药理学<br>药物化学';break;
+			case "药物制剂":
+			document.getElementById("grade1").innerHTML='无机化学<br>高级语言程序设计C1';
+			document.getElementById("grade2").innerHTML='物理化学<br>有机化学<br>药用高分子材料学';
+			document.getElementById("grade3").innerHTML='工业药剂学<br>药物分析<br>生物药剂与药代动力学';break;
+			case "食品质量与安全":
+			document.getElementById("grade1").innerHTML='无机及分析化学';
+			document.getElementById("grade2").innerHTML='物理化学<br>生物化学';
+			document.getElementById("grade3").innerHTML='食品工艺学<br>食品工艺学实验<br>食品感官评定<br>食品理化检验<br>食品分析实验<br>食品质量与安全控制学<br>食品微生物检验';break;
+			case "动物科学":
+			document.getElementById("grade1").innerHTML='基础化学<br>动物解剖学<br>动物科学专业导论<br>动物生物化学<br>电子商务';
+			document.getElementById("grade2").innerHTML='动物遗传育种学<br>动物繁殖学';
+			document.getElementById("grade3").innerHTML='牛羊生产学<br>禽生产学<br>猪生产学';break;
+			case "动物医学":
+			document.getElementById("grade1").innerHTML='动物生物化学<br>动物组织胚胎学';
+			document.getElementById("grade2").innerHTML='动物生理学<br>动物药理学<br>动物免疫学<br>动物病理学<br>中兽医学';
+			document.getElementById("grade3").innerHTML='动物寄生虫病学<br>动物内科学<br>中兽医针灸学<br>兽医传染病学<br>动物外科学<br>动物外科手术学<br>动物产科学';break;
+			case "体育教育":
+			document.getElementById("grade1").innerHTML='运动解剖学<br>运动生理学';
+			document.getElementById("grade2").innerHTML='心理学<br>体育保健学<br>教育学';
+			document.getElementById("grade3").innerHTML='学校体育学<br>体育统计学<br>体育心理学';break;
+			case "休闲体育":
+			document.getElementById("grade1").innerHTML='运动解剖学<br>运动生理学';
+			document.getElementById("grade2").innerHTML='休闲体育项目策划<br>经营与管理<br>方向课';
+			document.getElementById("grade3").innerHTML='体育旅游概论<br>水上运动（龙舟）<br>体育创新创业<br>体育俱乐部经营与管理<br>山地休闲运动';break;
+			case "英语":
+			document.getElementById("grade1").innerHTML='综合英语';
+			document.getElementById("grade2").innerHTML='演讲与辩论';
+			document.getElementById("grade3").innerHTML='高级英语<br>笔译<br>英美社会与文化';break;
+			case "汉语言文学":
+			document.getElementById("grade1").innerHTML='现代汉语<br>中国现代文学史';
+			document.getElementById("grade2").innerHTML='古代汉语<br>中国古代文学史';
+			document.getElementById("grade3").innerHTML='外国文学史<br>文学概论';break;
+			case "新闻学":
+			document.getElementById("grade1").innerHTML='市场营销学<br>广告摄影摄像';
+			document.getElementById("grade2").innerHTML='网络传播概论<br>网页制作与网站设计<br>新闻学概论';
+			document.getElementById("grade3").innerHTML='影视编导与节目制作<br>媒体大数据挖掘与分析';break;
+			case "广告学":
+			document.getElementById("grade1").innerHTML='广告学概论<br>市场营销学';
+			document.getElementById("grade2").innerHTML='网络传播概论<br>网页制作与网站设计';
+			document.getElementById("grade3").innerHTML='影视编导与节目制作<br>媒体大数据挖掘与分析';break;
+			case "网络与新媒体":
+			document.getElementById("grade1").innerHTML='新媒体概论<br>中国新闻传播史<br>新闻摄影摄像';
+			document.getElementById("grade2").innerHTML='新闻采访与写作学<br>外国新闻传播史';
+			document.getElementById("grade3").innerHTML='新闻编辑学<br>新闻评论学';break;
+
+		}
+		document.getElementById("schedule").style.display='block';
+		document.getElementById("reselect").style.display='block';
+	}
+}
+function click2(){
+	document.getElementById("select").style.display='block';
+	document.getElementById("xijie").style.display='none';
+	document.getElementById("schedule").style.display='none';
+	document.getElementById("reselect").style.display='none';
+}
+</script>
+
+
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

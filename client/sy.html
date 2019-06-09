@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/sys.css"/>
+		<link rel="stylesheet"  type="text/css " href="css/iconfont.css" />
+		<script src="js/mui.min.js"></script>
+		
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav public-color" >
+		    <h1 class="mui-title">
+		    	<input type="text" placeholder="请输入您要搜索的内容"/>
+		    </h1>  
+		</header>
+		<div class="mui-content" >
+			<div class="mui-slider" >
+				<div class="mui-slider-group mui-slider-loop ">
+					<div class="mui-slider-item ">
+						<a href="#"><img src="img/sy/fristview4.jpg"/></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img src="img/sy/fristview1.jpg"/></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img src="img/sy/fristview2.jpg"/></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img src="img/sy/fristview3.jpg"/></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img src="img/sy/fristview4.jpg"/></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img src="img/sy/fristview1.jpg"/></a>
+					</div>
+				</div> 
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator "></div>
+					<div class="mui-indicator "></div>
+					<div class="mui-indicator "></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			mui.plusReady(function(){
+				var slider=mui('.mui-slider');
+				slider.slider({interval:2000});
+			});
+		</script>
+		<div class="mui-content">
+		    <div class="box-a">
+		    	<div class="box-a-l " id="courseQuery">
+		    		<span class="mui-icon  iconfont icon-kecheng tubiao-1"></span>
+		   			<p>课程查询</p>
+		    	</div>
+		    	<div class="box-a-l " id="campusScenery">
+		    		<span class="mui-icon iconfont icon-xiaoyuanfengguang tubiao-2"></span>
+		   			<p>校园风光</p>
+		    	</div>
+		    	<div class="box-a-l " id="news">
+		    		<span class="mui-icon iconfont icon-icon tubiao-3"></span>
+		   			<p>校园新闻</p>
+		    	</div>
+		    	<div class="box-a-l " id="notice">
+		    		<span class="mui-icon iconfont icon-icon-test tubiao-4"></span>
+		   			<p>考试通知</p>
+		    	</div>
+		    	<div class="box-a-l box-a-l-s" id="eating">
+		    		<span class="mui-icon iconfont icon-coffee tubiao-6"></span>
+		   			<p>餐饮推荐</p>
+		    	</div>
+		    	<div class="box-a-l box-a-l-s" id="plan">
+		    		<span class="mui-icon iconfont icon-zhiye tubiao-7"></span>
+		   			<p>职业规划</p>
+		    	</div>
+		    	<div class="box-a-l box-a-l-s " id="music">
+		    		<span class="mui-icon iconfont icon-yinle tubiao-8"></span>
+		   			<p>每日必听</p>
+		    	</div>
+		    	<div class="box-a-l box-a-l-s" id="message">
+		    		<span class="mui-icon iconfont icon-liaotian tubiao-9"></span>
+		   			<p>学长寄语</p>
+		    	</div>
+		    </div>
+		</div>
+		
+		<div class="articles">
+			<div id="articles-head " class="articles" >
+			<span style="font-size: 19px;color: orangered;">美文推荐</span><br></div>
+			<div class="articles"><img src="img/sy/text1.jpg" style="width: 50%; height: 120px;" id="text1"/><img src="img/sy/text2.jpg" style="width: 49%; height: 120px; float: right;" id="text2"/></div>
+			<div class="articles"><span style="color: blue;"><span style="color: green;">三月，醉一场青春的流年</span>&nbsp;&nbsp;情镌三分木，相思万骨书</span></a></div>
+			<div class="articles"><img src="img/sy/text3.jpg" style="width: 50%;height: 120px;" id="text3"/><img src="img/sy/text4.jpg" style="width: 49%;height: 120px;float: right;" id="text4"/></div>
+			<div class="articles articles1"><span style="color:deeppink">红尘陌上雪，散落随花开</span>&nbsp;&nbsp;&nbsp;<span style="color: purple;">淡然处之 自己亦是风景</span></div>
+		</div>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+				document.getElementById('courseQuery').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'courseQuery.html',
+					id:'courseQuery.html' 
+				})
+				});
+				document.getElementById('campusScenery').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'campusScenery.html',
+					id:'campusScenery.html'
+				})
+				});
+				document.getElementById('news').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'news.html',
+					id:'news.html' 
+				})
+				});
+				document.getElementById('notice').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'notice.html',
+					id:'notice.html' 
+				})
+				});
+				document.getElementById('eating').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'eating.html',
+					id:'eating.html' 
+				})
+				});
+				document.getElementById('plan').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'plan.html',
+					id:'plan.html' 
+				})
+				});
+				document.getElementById('music').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'music.html',
+					id:'music.html' 
+				})
+				});
+				document.getElementById('message').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'message.html',
+					id:'message.html' 
+				})
+				});
+				document.getElementById('text1').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'text1.html',
+					id:'text1.html' 
+				})
+				});
+				document.getElementById('text2').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'text2.html',
+					id:'text2.html' 
+				})
+				});
+				document.getElementById('text3').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'text3.html',
+					id:'text3.html' 
+				})
+				});
+				document.getElementById('text4').addEventListener('tap',function(){
+				mui.openWindow({
+					url:'text4.html',
+					id:'text4.html' 
+				})
+				});
+			});
+		</script>
+	</body>
+
+</html>

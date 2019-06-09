@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont1.css"/>
+		<style type="text/css">
+			span{
+				font-family: "微软雅黑";
+			}
+		</style>
+	</head>
+
+	<body >
+		<header class="mui-bar mui-bar-nav">
+		    <h1 class="mui-title">附近的人</h1><a href="#"><img src="img/bianxie2.png" width="8%" height="70%" style="float: right;margin-top:5px" id="write"/></a>
+		</header>
+		<div class="mui-content" id="refreshContainer">
+		<div class="mui-content" id="0"  style="display: none;">
+			<img  style="border-radius: 50%;margin-bottom:-27px;" width="50px" height="50px" id="0headimage"/><span style="font-family: '微软雅黑';color:red" id="0nickname">&nbsp;</span><br/>
+			<span style="margin-left: 53px;font-size: 14px;color: #999999;font-family: '微软雅黑';" id="0date"></span><br />
+			<div class="mui-content" style="margin-top: 8px;" id="0text"></div>
+		</div>
+		<div class="mui-content" id="1" style="display: none;">
+			<img  style="border-radius: 50%;margin-bottom:-27px;" width="50px" height="50px" id="1headimage"/><span style="font-family: '微软雅黑';color:red" id="1nickname">&nbsp;</span><br/>
+			<span style="margin-left: 53px;font-size: 14px;color: #999999;font-family: '微软雅黑';" id="1date"></span><br />
+			<div class="mui-content" style="margin-top: 8px;" id="1text"></div>
+		</div>
+		<div class="mui-content" id="2" style="display: none;">
+			<img  style="border-radius: 50%;margin-bottom:-27px;" width="50px" height="50px" id="2headimage"/><span style="font-family: '微软雅黑';color:red" id="2nickname">&nbsp;</span><br/>
+			<span style="margin-left: 53px;font-size: 14px;color: #999999;font-family: '微软雅黑';" id="2date"></span><br />
+			<div class="mui-content" style="margin-top: 8px;" id="2text"></div>
+		</div>
+		<div class="mui-content" id="3" style="display: none;">
+			<img  style="border-radius: 50%;margin-bottom:-27px;" width="50px" height="50px" id="3headimage"/><span style="font-family: '微软雅黑';color:red" id="3nickname">&nbsp;</span><br/>
+			<span style="margin-left: 53px;font-size: 14px;color: #999999;font-family: '微软雅黑';" id="3date"></span><br />
+			<div class="mui-content" style="margin-top: 8px;" id="3text"></div>
+		</div>
+		<div class="mui-content" id="4" style="display: none;">
+			<img  style="border-radius: 50%;margin-bottom:-27px;" width="50px" height="50px" id="4headimage"/><span style="font-family: '微软雅黑';color:red" id="4nickname">&nbsp;</span><br/>
+			<span style="margin-left: 53px;font-size: 14px;color: #999999;font-family: '微软雅黑';" id="4date"></span><br />
+			<div class="mui-content" style="margin-top: 8px;" id="4text"></div>
+		</div>
+		<div class="mui-content" id="5" style="display: none;">
+			<img  style="border-radius: 50%;margin-bottom:-27px;" width="50px" height="50px" id="5headimage"/><span style="font-family: '微软雅黑';color:red" id="5nickname">&nbsp;</span><br/>
+			<span style="margin-left: 53px;font-size: 14px;color: #999999;font-family: '微软雅黑';" id="5date"></span><br />
+			<div class="mui-content" style="margin-top: 8px;" id="5text"></div>
+		</div>
+		<div class="mui-content" id="6" style="display: none;">
+			<img  style="border-radius: 50%;margin-bottom:-27px;" width="50px" height="50px" id="6headimage"/><span style="font-family: '微软雅黑';color:red" id="6nickname">&nbsp;</span><br/>
+			<span style="margin-left: 53px;font-size: 14px;color: #999999;font-family: '微软雅黑';" id="6date"></span><br />
+			<div class="mui-content" style="margin-top: 8px;" id="6text"></div>
+		</div>
+		<div id="content1"></div>
+		</div> 
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			var count=0;
+			mui.init({
+		  		pullRefresh : {
+		    container:"#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+		    down : {
+		     height:50,//可选,默认50.触发下拉刷新拖动距离,
+		      auto: true,//可选,默认false.首次加载自动下拉刷新一次
+		      contentdown : "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+		      contentover : "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+		      contentrefresh : "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+		      callback :fn  //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+		    },
+		    up : {
+			      height:50,//可选.默认50.触发上拉加载拖动距离
+			      auto:false,//可选,默认false.自动上拉加载一次
+			      contentrefresh : "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+			      contentnomore:'没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
+			      callback :fn1 //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+			    }
+		  } 
+		}); 
+			function fn(){
+				setTimeout(function(){
+					mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+					mui.ajax('http://10.0.2.2:8080/neighbor/all',{
+								dataType :'json',
+								type :'post',
+								timeout : 5000,
+								success :function(data){
+									var j;
+										if(data.length>0){
+											for(j=0;j<5;j++){
+											document.getElementById(j).style.display='block';
+											document.getElementById(j+"headimage").src=data[j].headImage;
+											document.getElementById(j+'date').innerHTML=data[j].gmt.substring(0,11);
+											document.getElementById(j+'text').innerHTML=data[j].text;
+											document.getElementById(j+'nickname').innerHTML=data[j].nickname;
+											}
+											count+=j;
+										}
+								}
+				               });
+					
+				},1000);
+			};
+			function fn1(){
+					mui.ajax('http://10.0.2.2:8080/neighbor/all',{
+								data:{},
+								dataType :'json',
+								type :'post',
+								timeout : 5000,
+								success :function(data){
+									var j
+										if(data.length>0){
+											for(j=0;j<5;j++){
+												var content = document.getElementById('content1');
+														var v = {"src": ""+data[count+j].headImage, "span1": ""+data[count+j].nickname, "span2": ""+data[count+j].gmt.substring(0,11), "div": ""+data[count+j].text};
+														var d = '<div>'+
+																	'<img src="' + v.src +'" style="border-radius: 50%;margin-bottom:-27px;" width="50px" height="50px" />' +
+																	'<span style="color:red" >&nbsp;' + v.span1 + '</span><br/>' +
+																	'<span style="margin-left: 53px;font-size: 14px;color: #999999;font-family: "微软雅黑";" >'+ v.span2 + '</span><br />'+
+																	'<div class="mui-content" style="margin-top: 8px;" >'+ v.div +'</div>'+
+																'</div>';
+															content.insertAdjacentHTML("beforeend", d); 
+											}	
+											count+=j;
+										}
+								} 
+				               });
+				this.endPullupToRefresh(true);
+			}
+			mui.plusReady(function(){
+				document.getElementById('write').addEventListener('tap',function(){
+					if(localStorage.getItem('httpid')>0){
+						mui.openWindow({
+					url:'write.html',
+					id:'write.html' 
+									})
+					}
+					else{
+						mui.toast('您还未登录，请登录后再使用!');
+						var index=3;
+						 var sy=plus.webview.getWebviewById('sy.html');
+           				 var neighbor=plus.webview.getWebviewById('neighbor.html');
+            			var mine=plus.webview.getWebviewById('mine.html');
+            			sy.setStyle({left:(index-1)*100+"%"});
+            			neighbor.setStyle({left:(2-index)*100+"%"});
+           				 mine.setStyle({left:(3-index)*100+"%"});
+					}
+				
+				});
+			});
+		</script>
+	</body>
+
+</html>

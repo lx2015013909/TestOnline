@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.MessageMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.Message">
+        <id column="id" jdbcType="INTEGER" property="id"></id>
+        <result column="title" jdbcType="VARCHAR" property="title" />
+        <result column="textcontent" jdbcType="VARCHAR" property="textcontent" />
+        <result column="GMT" jdbcType="TIMESTAMP" property="GMT" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select *  from message order by id desc
+    </select>
+    <select id="selectById" resultMap="BaseResultMap">
+        select *  from message where id=#{id}
+    </select>
+    <insert id="insert" >
+        insert into message(title,textcontent) values  (#{title},#{textcontent})
+    </insert>
+    <delete id="deleteById">
+        delete from message where id=#{id}
+    </delete>
+    <update id="updateById">
+        update message set title=#{title},textcontent =#{textcontent} where id=#{id}
+    </update>
+</mapper>

@@ -1,0 +1,84 @@
+{
+	"index.html": {
+		"resources": [
+			"sy.html"
+		],
+		"refer": [
+			"neighbor.html",
+			"sy.html",
+			"mine.html"
+		]
+	},
+	"sy.html": {
+		"refer": [
+			"courseQuery.html",
+			"campusScenery.html",
+			"notice.html",
+			"news.html",
+			"plan.html",
+			"text1.html",
+			"text2.html",
+			"message.html",
+			"music.html",
+			"eating.html"
+		]
+	},
+	"plan.html": {
+		"refer": [
+			"plan/1.html",
+			"plan/3.html"
+		]
+	},
+	"plan/1.html": {
+		"refer": [
+			"plan.html"
+		]
+	},
+	"mine.html": {
+		"refer": [
+			"minedetail.html",
+			"guanyu.html",
+			"shezhi.html"
+		]
+	},
+	"message.html": {
+		"refer": [
+			"message1.html",
+			"news/news.html",
+			"message/message.html"
+		]
+	},
+	"news.html": {
+		"refer": [
+			"news/news1.html",
+			"news/news.html",
+			"news/news2.html"
+		]
+	},
+	"news/news1.html": {
+		"refer": [
+			"news.html"
+		]
+	},
+	"news/news.html": {
+		"refer": [
+			"news.html",
+			"message.html"
+		]
+	},
+	"news/news2.html": {
+		"refer": [
+			"news.html"
+		]
+	},
+	"message/message.html": {
+		"refer": [
+			"message.html"
+		]
+	},
+	"neighbor.html": {
+		"refer": [
+			"write.html"
+		]
+	}
+}
